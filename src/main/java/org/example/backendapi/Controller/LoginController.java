@@ -1,6 +1,6 @@
 package org.example.backendapi.Controller;
 
-import org.example.backendapi.Dto.Account;
+import org.example.backendapi.Dto.ChangePassword;
 import org.example.backendapi.Dto.UserDto;
 import org.example.backendapi.Service.AccountService;
 import org.springframework.http.ResponseEntity;
@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class AccountController {
+public class LoginController {
 
     private AccountService accountService;
-    public AccountController(AccountService accountService) {
+    public LoginController(AccountService accountService) {
         this.accountService = accountService;
     }
 
@@ -22,5 +22,10 @@ public class AccountController {
         return ResponseEntity.ok(token);
     }
 
+    @PostMapping("/change-password")
+    public ResponseEntity<?> changePassword(@RequestBody ChangePassword dto) {
+        accountService.changePassword(dto);
+        return ResponseEntity.ok().build();
+    }
 
 }

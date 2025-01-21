@@ -3,11 +3,12 @@ package org.example.backendapi.Entity;
 import jakarta.persistence.*;
 import lombok.Data;
 import org.example.backendapi.Dto.Account;
+import org.example.backendapi.constants.NameTableConstant;
 
 import java.util.List;
 
 @Entity
-@Table(name = "tbl_account")
+@Table(name = NameTableConstant.ACCOUNT_TABLE)
 @Data
 public class AccountEntity {
 

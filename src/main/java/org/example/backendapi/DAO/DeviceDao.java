@@ -1,39 +1,13 @@
 package org.example.backendapi.DAO;
 
 import org.example.backendapi.Dto.Device;
+import org.example.backendapi.Dto.DeviceBorrow;
 
 import java.util.List;
-import java.util.Optional;
 
-public class DeviceDao implements Dao<Device>{
+public interface DeviceDao extends Dao<Device>{
+    void addDeviceBorrowed(DeviceBorrow deviceBorrow);
+    List<Device> getDevicesByName(String deviceName);
+    void DeleteDeviceBorrowed(DeviceBorrow deviceBorrow);
 
-    @Override
-    public Optional<Device> get(long id) {
-        return Optional.empty();
-    }
-
-    @Override
-    public Optional<Device> get(String keyWord) {
-        return Optional.empty();
-    }
-
-    @Override
-    public List<Device> getAll() {
-        return List.of();
-    }
-
-    @Override
-    public void save(Device device) {
-
-    }
-
-    @Override
-    public void update(Device device, String[] params) {
-
-    }
-
-    @Override
-    public void delete(Device device) {
-
-    }
 }

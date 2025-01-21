@@ -1,11 +1,12 @@
 package org.example.backendapi.Entity;
 
 import jakarta.persistence.*;
+import org.example.backendapi.constants.NameTableConstant;
 
 import java.util.List;
 
 @Entity
-@Table(name = "tbl_category")
+@Table(name = NameTableConstant.CATEGORY_TABLE)
 public class CategoryEntity {
 
     @Id

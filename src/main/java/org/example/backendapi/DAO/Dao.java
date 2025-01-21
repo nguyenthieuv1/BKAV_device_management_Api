@@ -8,6 +8,8 @@ public interface Dao<T>{
 
     Optional<T> get(String keyWord);
 
+    Optional<T> get(T Dto);
+
     List<T> getAll();
 
     void save(T t);
